@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="6-Sign-up" transform="translate(-91.000000, -225.000000)" fill="#DADADA">
+            <g id="Form" transform="translate(55.000000, 183.000000)">
+                <g id="ic_profile" transform="translate(30.000000, 36.000000)">
+                    <path d="M6,10 L6,38 C6,40.2 7.78,42 10,42 L38,42 C40.2,42 42,40.2 42,38 L42,10 C42,7.8 40.2,6 38,6 L10,6 C7.78,6 6,7.8 6,10 L6,10 Z M30,18 C30,21.32 27.32,24 24,24 C20.68,24 18,21.32 18,18 C18,14.68 20.68,12 24,12 C27.32,12 30,14.68 30,18 L30,18 Z M12,34 C12,30 20,27.8 24,27.8 C28,27.8 36,30 36,34 L36,36 L12,36 L12,34 L12,34 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
