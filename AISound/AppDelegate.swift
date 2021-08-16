@@ -18,10 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav3 = UINavigationController(rootViewController: FeedbackViewController())
         let nav4 = UINavigationController(rootViewController: MeViewController())
         let tabVc = UITabBarController()
-        let tabbar1 = UITabBarItem(title: "Record", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
-        let tabbar2 = UITabBarItem(title: "File", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
-        let tabbar3 = UITabBarItem(title: "Feedback", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
-        let tabbar4 = UITabBarItem(title: "Me", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+        let tabbar1 = UITabBarItem(title: "Record", image: UIImage(systemName: "arrowtriangle.right.circle"), selectedImage: UIImage(systemName: "arrowtriangle.right.circle"))
+        let tabbar2 = UITabBarItem(title: "File", image: UIImage(systemName: "text.justify"), selectedImage: UIImage(systemName: "text.justify"))
+        let tabbar3 = UITabBarItem(title: "Feedback", image: UIImage(systemName: "bubble.right"), selectedImage: UIImage(systemName: "bubble.right"))
+        let tabbar4 = UITabBarItem(title: "Me", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
         nav1.tabBarItem = tabbar1
         nav2.tabBarItem = tabbar2
         nav3.tabBarItem = tabbar3

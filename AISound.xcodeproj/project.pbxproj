@@ -18,6 +18,7 @@
 		D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895026B7888E001EDB55 /* WelcomeViewController.swift */; };
 		D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895226BF8C9D001EDB55 /* RegisterViewController.swift */; };
 		D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895426BF8CA5001EDB55 /* LoginViewController.swift */; };
+		D09047A126CA3436000F215B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047A026CA3436000F215B /* Common.swift */; };
 		D3934C89BB7EBAB75CC2FF7F /* Pods_AISound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC2E4AF2C9CBC05E893641D /* Pods_AISound.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		D035895026B7888E001EDB55 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D035895226BF8C9D001EDB55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D035895426BF8CA5001EDB55 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D09047A026CA3436000F215B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D01EDBA926B4C92D00531418 /* Assets.xcassets */,
 				D01EDBAB26B4C92D00531418 /* LaunchScreen.storyboard */,
 				D01EDBAE26B4C92D00531418 /* Info.plist */,
+				D09047A026CA3436000F215B /* Common.swift */,
 			);
 			path = AISound;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				D035894926B6EBA9001EDB55 /* RecordViewController.swift in Sources */,
 				D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */,
 				D035894B26B6EBC2001EDB55 /* FileViewController.swift in Sources */,
+				D09047A126CA3436000F215B /* Common.swift in Sources */,
 				D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */,
 				D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */,
 				D035894D26B6EBED001EDB55 /* FeedbackViewController.swift in Sources */,

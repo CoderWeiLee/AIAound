@@ -1,16 +1,24 @@
 PODS:
+  - JKSwiftExtension (1.8.0):
+    - Kingfisher
+  - Kingfisher (4.10.1)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - JKSwiftExtension
   - SnapKit
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - JKSwiftExtension
+    - Kingfisher
     - SnapKit
 
 SPEC CHECKSUMS:
+  JKSwiftExtension: 36228e99699b676a20f155bf862c76094766f6aa
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: d4fa6cdcea17c816a1e76f5105cb73cf6e655c6e
+PODFILE CHECKSUM: d77ce09c351791a6d2f58449882b4539b35f8e92
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0
