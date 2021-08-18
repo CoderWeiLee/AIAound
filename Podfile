@@ -6,6 +6,7 @@ target 'AISound' do
   use_frameworks!
   pod 'SnapKit'
   pod 'JKSwiftExtension'
+  pod 'JXSegmentedView'
   # Pods for AISound
 
 end

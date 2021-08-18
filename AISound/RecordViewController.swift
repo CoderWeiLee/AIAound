@@ -22,8 +22,32 @@ class RecordViewController: UIViewController {
         return label
     }()
     
+    lazy var noticeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(hexString: "#7948ea")
+        label.font = UIFont.systemFont(ofSize: 9)
+        return label
+    }()
+    
+    lazy var startBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = UIColor(hexString: "#2a82e4")
+        btn.layer.cornerRadius = 8
+        btn.layer.masksToBounds = true
+        btn.setTitle("Start", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.addTarget(self, action: #selector(start), for: .touchUpInside)
+        return btn
+    }()
+    
+    //MARK: - 开始
+    @objc func start() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         view.addSubview(topBgView)
         topBgView.snp.makeConstraints { make in
             make.left.equalTo(view).offset(17)
@@ -36,6 +60,22 @@ class RecordViewController: UIViewController {
         recordLabel.snp.makeConstraints { make in
             make.centerX.equalTo(topBgView)
             make.top.equalTo(topBgView).offset(30)
+        }
+        
+        view.addSubview(noticeLabel)
+        noticeLabel.snp.makeConstraints { make in
+            make.left.equalTo(view).offset(9)
+            make.right.equalTo(view).offset(-9)
+            make.top.equalTo(topBgView.snp_bottom).offset(30)
+            make.height.equalTo(65)
+        }
+        
+        view.addSubview(startBtn)
+        startBtn.snp.makeConstraints { make in
+            make.width.equalTo(58)
+            make.height.equalTo(31)
+            make.centerX.equalTo(view)
+            make.top.equalTo(noticeLabel.snp_bottom).offset(42)
         }
     }
 
