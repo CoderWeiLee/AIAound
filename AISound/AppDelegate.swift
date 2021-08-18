@@ -31,7 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabVc.addChild(nav3)
         tabVc.addChild(nav4)
         window?.backgroundColor = .white
-        window?.rootViewController = UINavigationController(rootViewController: tabVc)
+        let nav = UINavigationController(rootViewController: tabVc)
+        nav1.navigationBar.isHidden = true
+        nav2.navigationBar.isHidden = true
+        nav3.navigationBar.isHidden = true
+        nav4.navigationBar.isHidden = true
+        nav.navigationBar.isHidden = true
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true
     }

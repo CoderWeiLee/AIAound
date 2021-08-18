@@ -47,7 +47,6 @@ class RecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         view.addSubview(topBgView)
         topBgView.snp.makeConstraints { make in
             make.left.equalTo(view).offset(17)

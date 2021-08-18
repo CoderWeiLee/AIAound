@@ -14,7 +14,6 @@ class FileViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
         //1.初始化JXSegmentedView
         segmentedView = JXSegmentedView()

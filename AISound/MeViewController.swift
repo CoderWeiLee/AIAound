@@ -9,7 +9,7 @@ import UIKit
 class MeViewController: UIViewController {
     lazy var topContainerView: UIView = {
         let top = UIView()
-        top.backgroundColor = UIColor(hexString: "#e9e4d9")
+        top.backgroundColor = UIColor(hexString: "e9e4d9")
         return top
     }()
     
@@ -209,11 +209,11 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         view.addSubview(topContainerView)
-        navigationController?.isNavigationBarHidden = true
         topContainerView.snp.makeConstraints { make in
             make.left.right.equalTo(view)
-            make.top.equalTo(view).offset(topSafeAreaHeight)
+            make.top.equalTo(view).offset(topSafeAreaHeight + statusBarHeight)
             make.height.equalTo(179)
         }
         
