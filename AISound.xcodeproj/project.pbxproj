@@ -25,6 +25,9 @@
 		D09047A926CCAD91000F215B /* SendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047A826CCAD91000F215B /* SendingViewController.swift */; };
 		D09047AB26CCB169000F215B /* MotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047AA26CCB169000F215B /* MotionTableViewCell.swift */; };
 		D09047AD26CCB323000F215B /* SendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047AC26CCB323000F215B /* SendingTableViewCell.swift */; };
+		D0C9B3A826CDFDEB00E89291 /* AIUser.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A726CDFDEB00E89291 /* AIUser.swift.swift */; };
+		D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A926CE029B00E89291 /* AILoginManager.swift */; };
+		D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3AB26CE037C00E89291 /* Constants.swift */; };
 		D3934C89BB7EBAB75CC2FF7F /* Pods_AISound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC2E4AF2C9CBC05E893641D /* Pods_AISound.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		D09047A826CCAD91000F215B /* SendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingViewController.swift; sourceTree = "<group>"; };
 		D09047AA26CCB169000F215B /* MotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTableViewCell.swift; sourceTree = "<group>"; };
 		D09047AC26CCB323000F215B /* SendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingTableViewCell.swift; sourceTree = "<group>"; };
+		D0C9B3A726CDFDEB00E89291 /* AIUser.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIUser.swift.swift; sourceTree = "<group>"; };
+		D0C9B3A926CE029B00E89291 /* AILoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILoginManager.swift; sourceTree = "<group>"; };
+		D0C9B3AB26CE037C00E89291 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,27 +110,126 @@
 		D01EDB9F26B4C92D00531418 /* AISound */ = {
 			isa = PBXGroup;
 			children = (
+				D0C9B3A326CDF9D000E89291 /* Common */,
+				D0C9B39F26CDF8ED00E89291 /* Me */,
+				D0C9B39E26CDF8E500E89291 /* Feedback */,
+				D0C9B39D26CDF8D900E89291 /* File */,
+				D0C9B39C26CDF8AB00E89291 /* Record */,
+				D0C9B39B26CDF89800E89291 /* Login */,
 				D01EDBA026B4C92D00531418 /* AppDelegate.swift */,
-				D035895026B7888E001EDB55 /* WelcomeViewController.swift */,
-				D035894826B6EBA9001EDB55 /* RecordViewController.swift */,
-				D035894A26B6EBC2001EDB55 /* FileViewController.swift */,
-				D035894C26B6EBED001EDB55 /* FeedbackViewController.swift */,
-				D035894E26B6EC00001EDB55 /* MeViewController.swift */,
-				D035895226BF8C9D001EDB55 /* RegisterViewController.swift */,
-				D035895426BF8CA5001EDB55 /* LoginViewController.swift */,
-				D09047A226CC9B24000F215B /* FileTableViewCell.swift */,
-				D09047A426CCAD5D000F215B /* AudioViewController.swift */,
-				D09047A626CCAD78000F215B /* MotionViewController.swift */,
-				D09047A826CCAD91000F215B /* SendingViewController.swift */,
-				D09047AA26CCB169000F215B /* MotionTableViewCell.swift */,
-				D09047AC26CCB323000F215B /* SendingTableViewCell.swift */,
 				D01EDBA626B4C92D00531418 /* Main.storyboard */,
 				D01EDBA926B4C92D00531418 /* Assets.xcassets */,
 				D01EDBAB26B4C92D00531418 /* LaunchScreen.storyboard */,
 				D01EDBAE26B4C92D00531418 /* Info.plist */,
-				D09047A026CA3436000F215B /* Common.swift */,
 			);
 			path = AISound;
+			sourceTree = "<group>";
+		};
+		D0C9B39B26CDF89800E89291 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D0C9B3A626CDFDBD00E89291 /* View */,
+				D0C9B3A526CDFDB700E89291 /* Model */,
+				D0C9B3A426CDFDAC00E89291 /* ViewControl */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D0C9B39C26CDF8AB00E89291 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				D035894826B6EBA9001EDB55 /* RecordViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		D0C9B39D26CDF8D900E89291 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				D0C9B3A226CDF95800E89291 /* View */,
+				D0C9B3A126CDF95000E89291 /* Model */,
+				D0C9B3A026CDF94400E89291 /* ViewControl */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		D0C9B39E26CDF8E500E89291 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D035894C26B6EBED001EDB55 /* FeedbackViewController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D0C9B39F26CDF8ED00E89291 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				D035894E26B6EC00001EDB55 /* MeViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		D0C9B3A026CDF94400E89291 /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				D09047A826CCAD91000F215B /* SendingViewController.swift */,
+				D09047A626CCAD78000F215B /* MotionViewController.swift */,
+				D09047A426CCAD5D000F215B /* AudioViewController.swift */,
+				D035894A26B6EBC2001EDB55 /* FileViewController.swift */,
+			);
+			path = ViewControl;
+			sourceTree = "<group>";
+		};
+		D0C9B3A126CDF95000E89291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0C9B3A226CDF95800E89291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D09047AC26CCB323000F215B /* SendingTableViewCell.swift */,
+				D09047AA26CCB169000F215B /* MotionTableViewCell.swift */,
+				D09047A226CC9B24000F215B /* FileTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0C9B3A326CDF9D000E89291 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D09047A026CA3436000F215B /* Common.swift */,
+				D0C9B3AB26CE037C00E89291 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0C9B3A426CDFDAC00E89291 /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				D035895426BF8CA5001EDB55 /* LoginViewController.swift */,
+				D035895226BF8C9D001EDB55 /* RegisterViewController.swift */,
+				D035895026B7888E001EDB55 /* WelcomeViewController.swift */,
+			);
+			path = ViewControl;
+			sourceTree = "<group>";
+		};
+		D0C9B3A526CDFDB700E89291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0C9B3A726CDFDEB00E89291 /* AIUser.swift.swift */,
+				D0C9B3A926CE029B00E89291 /* AILoginManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0C9B3A626CDFDBD00E89291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D035894F26B6EC00001EDB55 /* MeViewController.swift in Sources */,
+				D0C9B3A826CDFDEB00E89291 /* AIUser.swift.swift in Sources */,
 				D09047AB26CCB169000F215B /* MotionTableViewCell.swift in Sources */,
 				D035894926B6EBA9001EDB55 /* RecordViewController.swift in Sources */,
 				D09047A726CCAD78000F215B /* MotionViewController.swift in Sources */,
@@ -250,12 +356,14 @@
 				D035894B26B6EBC2001EDB55 /* FileViewController.swift in Sources */,
 				D09047A126CA3436000F215B /* Common.swift in Sources */,
 				D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */,
+				D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */,
 				D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */,
 				D09047A326CC9B24000F215B /* FileTableViewCell.swift in Sources */,
 				D09047A526CCAD5D000F215B /* AudioViewController.swift in Sources */,
 				D035894D26B6EBED001EDB55 /* FeedbackViewController.swift in Sources */,
 				D09047A926CCAD91000F215B /* SendingViewController.swift in Sources */,
 				D01EDBA126B4C92D00531418 /* AppDelegate.swift in Sources */,
+				D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
