@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabVc.addChild(nav2)
         tabVc.addChild(nav3)
         tabVc.addChild(nav4)
+        tabVc.tabBar.barTintColor = .black
         window?.backgroundColor = .white
         let nav = UINavigationController(rootViewController: tabVc)
         nav1.navigationBar.isHidden = true

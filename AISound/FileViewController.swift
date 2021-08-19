@@ -14,7 +14,7 @@ class FileViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         //1.初始化JXSegmentedView
         segmentedView = JXSegmentedView()
         segmentedView.delegate = self

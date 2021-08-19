@@ -9,14 +9,14 @@ import UIKit
 class MeViewController: UIViewController {
     lazy var topContainerView: UIView = {
         let top = UIView()
-        top.backgroundColor = UIColor(hexString: "e9e4d9")
+        top.backgroundColor = UIColor(red: 233.0 / 255.0, green: 228.0 / 255.0, blue: 217.0 / 255.0, alpha: 0.1)
         return top
     }()
     
     lazy var iconImageView: UIImageView = {
        let icon = UIImageView()
        icon.image = UIImage(systemName: "person.crop.square")
-       icon.layer.cornerRadius = 20
+       icon.layer.cornerRadius = 4
        icon.layer.masksToBounds = true
        return icon
     }()
@@ -219,7 +219,6 @@ class MeViewController: UIViewController {
         
         topContainerView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
             make.left.equalTo(topContainerView).offset(5)
             make.top.equalTo(topContainerView).offset(20)
         }
