@@ -6,28 +6,29 @@
 //
 import UIKit
 import JKSwiftExtension
+import KRProgressHUD
 class RegisterViewController: UIViewController {
     lazy var firstNameContainerView: UIView = {
         let firstView = UIView()
-        firstView.backgroundColor = .white
+        firstView.backgroundColor = .black
         return firstView
     }()
     
     lazy var secondNameContainerView: UIView = {
         let secondView = UIView()
-        secondView.backgroundColor = .white
+        secondView.backgroundColor = .black
         return secondView
     }()
     
     lazy var thirdNameContainerView: UIView = {
         let thirdView = UIView()
-        thirdView.backgroundColor = .white
+        thirdView.backgroundColor = .black
         return thirdView
     }()
     
     lazy var fourthNameContainerView: UIView = {
         let fourthView = UIView()
-        fourthView.backgroundColor = .white
+        fourthView.backgroundColor = .black
         return fourthView
     }()
     
@@ -38,7 +39,10 @@ class RegisterViewController: UIViewController {
     
     lazy var firstNameTextField: UITextField = {
        let textF = UITextField()
-       textF.placeholder = "First Name"
+       let attrStr = NSMutableAttributedString(string: "First Name")
+       attrStr.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.hexStringColor(hexString: "#bababa"), range: NSMakeRange(0, attrStr.length))
+       textF.attributedPlaceholder(attrStr)
+       textF.textColor = UIColor.hexStringColor(hexString: "#bababa")
        return textF
     }()
     
@@ -49,7 +53,10 @@ class RegisterViewController: UIViewController {
     
     lazy var secondNameTextField: UITextField = {
        let textF = UITextField()
-       textF.placeholder = "Last Name"
+       let attrStr = NSMutableAttributedString(string: "Last Name")
+        attrStr.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.hexStringColor(hexString: "#bababa"), range: NSMakeRange(0, attrStr.length))
+       textF.attributedPlaceholder(attrStr)
+       textF.textColor = UIColor.hexStringColor(hexString: "#bababa")
        return textF
     }()
     
@@ -60,7 +67,10 @@ class RegisterViewController: UIViewController {
     
     lazy var thirdNameTextField: UITextField = {
         let textF = UITextField()
-        textF.placeholder = "Email"
+        let attrStr = NSMutableAttributedString(string: "Email")
+        attrStr.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.hexStringColor(hexString: "#bababa"), range: NSMakeRange(0, attrStr.length))
+        textF.attributedPlaceholder(attrStr)
+        textF.textColor = UIColor.hexStringColor(hexString: "#bababa")
         return textF
     }()
     
@@ -71,7 +81,10 @@ class RegisterViewController: UIViewController {
     
     lazy var fourthNameTextField: UITextField = {
         let textF = UITextField()
-        textF.placeholder = "Password"
+        let attrStr = NSMutableAttributedString(string: "Password")
+        attrStr.addAttribute(NSMutableAttributedString.Key.foregroundColor, value: UIColor.hexStringColor(hexString: "#bababa"), range: NSMakeRange(0, attrStr.length))
+        textF.attributedPlaceholder(attrStr)
+        textF.textColor = UIColor.hexStringColor(hexString: "#bababa")
         return textF
     }()
     
@@ -87,6 +100,22 @@ class RegisterViewController: UIViewController {
     
     //MARK: - 注册
     @objc func register() {
+        if firstNameTextField.text == "" {
+            KRProgressHUD.showMessage("Please enter your fitstName")
+            return
+        }
+        if secondNameTextField.text == "" {
+            KRProgressHUD.showMessage("Please enter your lastName")
+            return
+        }
+        if thirdNameTextField.text == "" {
+            KRProgressHUD.showMessage("Please enter your email")
+            return
+        }
+        if fourthNameTextField.text == "" {
+            KRProgressHUD.showMessage("Please enter your password")
+            return
+        }
         
     }
     
@@ -164,7 +193,7 @@ class RegisterViewController: UIViewController {
             make.top.bottom.right.equalTo(fourthNameContainerView)
         }
         
-        view.addTo(registerBtn)
+        view.addSubview(registerBtn)
         registerBtn.snp.makeConstraints { make in
             make.left.right.height.equalTo(fourthNameContainerView)
             make.top.equalTo(fourthNameContainerView.snp_bottom).offset(15)
