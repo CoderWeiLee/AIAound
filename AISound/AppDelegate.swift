@@ -41,7 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             nav.navigationBar.isHidden = true
             window?.rootViewController = nav
         }else {
-            window?.rootViewController = WelcomeViewController()
+            let welVc = WelcomeViewController()
+            let nav = UINavigationController(rootViewController: welVc)
+            nav.navigationBar.isHidden = true
+            window?.rootViewController = nav
         }
         window?.makeKeyAndVisible()
         return true
