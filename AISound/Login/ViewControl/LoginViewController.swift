@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
        email.layer.cornerRadius = 20
        email.layer.masksToBounds = true
        email.layer.borderWidth = 1
-       email.layer.borderColor = UIColor(hexString: "#e1e1e1")?.cgColor
+       email.layer.borderColor = UIColor(hexString: "#313131")?.cgColor
        return email
     }()
     
@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
        pwd.layer.cornerRadius = 20
        pwd.layer.masksToBounds = true
        pwd.layer.borderWidth = 1
-       pwd.layer.borderColor = UIColor(hexString: "#e1e1e1")?.cgColor
+       pwd.layer.borderColor = UIColor(hexString: "#313131")?.cgColor
        return pwd
     }()
     
