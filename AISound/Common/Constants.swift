@@ -7,3 +7,6 @@
 
 import Foundation
 let kUserLoginKey: String = "This user has already logined before."
+let defaults = UserDefaults.standard
+let currentUserKey = "currentUserKey"
+let loginKey = "loginKey"

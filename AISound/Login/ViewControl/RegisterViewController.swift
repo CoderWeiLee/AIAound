@@ -10,25 +10,25 @@ import KRProgressHUD
 class RegisterViewController: UIViewController {
     lazy var firstNameContainerView: UIView = {
         let firstView = UIView()
-        firstView.backgroundColor = .black
+        firstView.backgroundColor = UIColor(hexString: "#121212")
         return firstView
     }()
     
     lazy var secondNameContainerView: UIView = {
         let secondView = UIView()
-        secondView.backgroundColor = .black
+        secondView.backgroundColor = UIColor(hexString: "#121212")
         return secondView
     }()
     
     lazy var thirdNameContainerView: UIView = {
         let thirdView = UIView()
-        thirdView.backgroundColor = .black
+        thirdView.backgroundColor = UIColor(hexString: "#121212")
         return thirdView
     }()
     
     lazy var fourthNameContainerView: UIView = {
         let fourthView = UIView()
-        fourthView.backgroundColor = .black
+        fourthView.backgroundColor = UIColor(hexString: "#121212")
         return fourthView
     }()
     
@@ -116,7 +116,10 @@ class RegisterViewController: UIViewController {
             KRProgressHUD.showMessage("Please enter your password")
             return
         }
-        
+        AILoginManager.sharedLoginManager.currentUser = AIUser(firstName: firstNameTextField.text, lastName: secondNameTextField.text, email: thirdNameTextField.text, password: fourthNameTextField.text)
+        defaults.saveCustomObject(customObject: AILoginManager.sharedLoginManager.currentUser!, key: currentUserKey)
+        KRProgressHUD.showMessage("Register Success!")
+        navigationController?.pushViewController(LoginViewController(), animated: true)
     }
     
     override func viewDidLoad() {

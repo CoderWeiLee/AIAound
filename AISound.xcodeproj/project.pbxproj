@@ -28,6 +28,7 @@
 		D0C9B3A826CDFDEB00E89291 /* AIUser.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A726CDFDEB00E89291 /* AIUser.swift.swift */; };
 		D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A926CE029B00E89291 /* AILoginManager.swift */; };
 		D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3AB26CE037C00E89291 /* Constants.swift */; };
+		D0F2F51826D38A1000793164 /* AITabbarController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */; };
 		D3934C89BB7EBAB75CC2FF7F /* Pods_AISound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC2E4AF2C9CBC05E893641D /* Pods_AISound.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		D0C9B3A726CDFDEB00E89291 /* AIUser.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIUser.swift.swift; sourceTree = "<group>"; };
 		D0C9B3A926CE029B00E89291 /* AILoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILoginManager.swift; sourceTree = "<group>"; };
 		D0C9B3AB26CE037C00E89291 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITabbarController.swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				D035895426BF8CA5001EDB55 /* LoginViewController.swift */,
 				D035895226BF8C9D001EDB55 /* RegisterViewController.swift */,
 				D035895026B7888E001EDB55 /* WelcomeViewController.swift */,
+				D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */,
 			);
 			path = ViewControl;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				D035894926B6EBA9001EDB55 /* RecordViewController.swift in Sources */,
 				D09047A726CCAD78000F215B /* MotionViewController.swift in Sources */,
 				D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */,
+				D0F2F51826D38A1000793164 /* AITabbarController.swift.swift in Sources */,
 				D09047AD26CCB323000F215B /* SendingTableViewCell.swift in Sources */,
 				D035894B26B6EBC2001EDB55 /* FileViewController.swift in Sources */,
 				D09047A126CA3436000F215B /* Common.swift in Sources */,
