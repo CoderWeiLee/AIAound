@@ -12,6 +12,7 @@ struct Recording {
     let fileURL: URL
     let createdAt: Date
     let fileSize: String
+    var indexPath: IndexPath?
     var nameTime: String {
         get {
             //Convert date to yyyy-mm-dd string

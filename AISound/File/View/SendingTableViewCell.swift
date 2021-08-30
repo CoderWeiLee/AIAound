@@ -6,6 +6,10 @@
 //
 
 import UIKit
+protocol SendingTableViewCellDelegate : NSObject {
+    func didSelect(at index: IndexPath)
+    func didDeselect(at index: IndexPath)
+}
 class SendingTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let name = UILabel()
@@ -34,9 +38,12 @@ class SendingTableViewCell: UITableViewCell {
         }
     }
     
+    weak var delegate: SendingTableViewCellDelegate?
+    
     //MARK: - 选中
     @objc func selectAction() {
         selectBtn.isSelected = !selectBtn.isSelected
+        selectBtn.isSelected ? self.delegate?.didSelect(at: (self.record?.indexPath)!) : self.delegate?.didDeselect(at: (self.record?.indexPath)!)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
