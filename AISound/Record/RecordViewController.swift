@@ -7,7 +7,11 @@
 
 import UIKit
 import JKSwiftExtension
+import CoreMotion
+import AVFAudio
 class RecordViewController: UIViewController {
+    private lazy var motionManager = CMHeadphoneMotionManager()
+    
     lazy var topBgView: UIView = {
         let v = UIView()
         v.backgroundColor = UIColor(hexString: "#a6a6a6")
@@ -25,7 +29,8 @@ class RecordViewController: UIViewController {
     lazy var noticeLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hexString: "#7948ea")
-        label.font = UIFont.systemFont(ofSize: 9)
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .center
         return label
     }()
     
@@ -72,6 +77,7 @@ class RecordViewController: UIViewController {
         AudioRecorder.sharedRecorder.startRecord()
         recordView.isHidden = false
         timer.resume()
+        noticeLabel.text = "Recording..."
     }
     
     private func stopRecords() {
@@ -80,10 +86,13 @@ class RecordViewController: UIViewController {
         recordView.isHidden = true
         timer.cancel()
         recordLabel.text = "00:00"
+        noticeLabel.text = "Saved"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noticeLabel.text = "Motion Available: \(motionManager.isDeviceMotionAvailable)"
+        motionManager.delegate = self
         view.backgroundColor = .black
         view.addSubview(topBgView)
         topBgView.snp.makeConstraints { make in
@@ -122,7 +131,28 @@ class RecordViewController: UIViewController {
             make.centerX.equalTo(view)
             make.top.equalTo(noticeLabel.snp_bottom).offset(42)
         }
+        
+        noticeLabel.text = "Searching Airpods..."
     }
 
 
+}
+
+extension RecordViewController: CMHeadphoneMotionManagerDelegate {
+    func headphoneMotionManagerDidConnect(_ manager: CMHeadphoneMotionManager) {
+        var outputName = ""
+        let outputs = AVAudioSession.sharedInstance().currentRoute.outputs
+        for desc in outputs {
+            if desc.portName.contains("AirPods") {
+                outputName = desc.portName
+            }
+        }
+        //耳机连接时调用
+        noticeLabel.text = "Warning: Please wear \(outputName).\n / \(outputName) is ready."
+    }
+    
+    func headphoneMotionManagerDidDisconnect(_ manager: CMHeadphoneMotionManager) {
+        //耳机断开连接时调用
+        noticeLabel.text = "Motion Manager Did Disconnect"
+    }
 }
