@@ -20,6 +20,12 @@ class MotionTableViewCell: UITableViewCell {
         return sep
     }()
     
+    var record: Recording? {
+        didSet {
+            nameLabel.text = record?.nameTime ?? "" + ".csv"
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(nameLabel)

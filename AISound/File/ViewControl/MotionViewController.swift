@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JXSegmentedView
 class MotionViewController: UIViewController {
     var tableView: UITableView!
     override func viewDidLoad() {
@@ -13,7 +14,7 @@ class MotionViewController: UIViewController {
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(FileTableViewCell.classForCoder(), forCellReuseIdentifier: "File")
+        tableView.register(MotionTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(MotionTableViewCell.self))
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(view)
@@ -23,10 +24,18 @@ class MotionViewController: UIViewController {
 
 extension MotionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return AudioRecorder.sharedRecorder.recordings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MotionTableViewCell.self), for: indexPath) as! MotionTableViewCell
+        cell.record = AudioRecorder.sharedRecorder.recordings[indexPath.row]
+        return cell
+    }
+}
+
+extension MotionViewController: JXSegmentedListContainerViewListDelegate {
+    func listView() -> UIView {
+        return view
     }
 }

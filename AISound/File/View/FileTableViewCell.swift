@@ -40,6 +40,13 @@ class FileTableViewCell: UITableViewCell {
         return sep
     }()
     
+    var record: Recording? {
+        didSet {
+            nameLabel.text = record?.nameTime ?? "" + ".wav"
+            durationLabel.text = "\(record?.detailTime ?? "")" + " " + "\(record?.fileSize ?? "0MB")"
+        }
+    }
+    
     //MARK: - 播放
     @objc func playAudio() {
         

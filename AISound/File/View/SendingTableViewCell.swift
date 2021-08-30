@@ -28,6 +28,12 @@ class SendingTableViewCell: UITableViewCell {
         return sep
     }()
     
+    var record: Recording? {
+        didSet {
+            nameLabel.text = record?.nameTime ?? "" + ".wav/csv"
+        }
+    }
+    
     //MARK: - 选中
     @objc func selectAction() {
         selectBtn.isSelected = !selectBtn.isSelected

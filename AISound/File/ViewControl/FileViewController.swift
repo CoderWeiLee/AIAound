@@ -11,7 +11,7 @@ class FileViewController: UIViewController {
     var segmentedView: JXSegmentedView!
     var segmentedDataSource: JXSegmentedTitleDataSource!
     var indicator: JXSegmentedIndicatorLineView!
-   
+    var listContainerView: JXSegmentedListContainerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -44,6 +44,13 @@ class FileViewController: UIViewController {
         indicator.indicatorColor = UIColor(hexString: "#242202")!
         indicator.indicatorHeight = 2
         segmentedView.indicators = [indicator]
+        
+        //4.初始化JXSegmentedListContainerView
+        listContainerView = JXSegmentedListContainerView(dataSource: self)
+        view.addSubview(self.listContainerView)
+        //关联listContainer
+        segmentedView.listContainer = listContainerView
+
     }
 
 
@@ -60,14 +67,21 @@ extension FileViewController: JXSegmentedViewDelegate {
     func segmentedView(_ segmentedView: JXSegmentedView, scrollingFrom leftIndex: Int, to rightIndex: Int, percent: CGFloat) {}
 }
 
-extension FileViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+extension FileViewController: JXSegmentedListContainerViewDataSource {
+    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+        switch index {
+        case 0:
+            return AudioViewController()
+        case 1:
+            return MotionViewController()
+        default:
+            return SendingViewController()
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "File", for: indexPath)
-        
-        return cell
+    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+        return 3
     }
+    
+    
 }
