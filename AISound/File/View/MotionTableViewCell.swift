@@ -10,7 +10,7 @@ class MotionTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.font = UIFont.systemFont(ofSize: 8)
+        name.font = UIFont.systemFont(ofSize: 14)
         return name
     }()
     
@@ -22,12 +22,13 @@ class MotionTableViewCell: UITableViewCell {
     
     var record: Recording? {
         didSet {
-            nameLabel.text = record?.nameTime ?? "" + ".csv"
+            nameLabel.text = "\(record?.nameTime ?? "") .csv"
         }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .black
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(contentView).offset(9)
@@ -37,7 +38,7 @@ class MotionTableViewCell: UITableViewCell {
         contentView.addSubview(separatorLine)
         separatorLine.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(contentView)
-            make.height.equalTo(1)
+            make.height.equalTo(0.5)
         }
     }
     

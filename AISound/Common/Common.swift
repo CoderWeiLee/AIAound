@@ -28,4 +28,5 @@ let kScrrnWidth = UIScreen.main.bounds.size.width
 
 let kScreenHeight = UIScreen.main.bounds.size.height
 
+let kNewAudioNotificationName = "kNewAudioNotificationName"
 

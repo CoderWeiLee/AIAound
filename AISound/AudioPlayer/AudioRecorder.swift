@@ -14,6 +14,7 @@ import AVFoundation
 class AudioRecorder: NSObject {
     static let sharedRecorder : AudioRecorder = {
        let recorder = AudioRecorder()
+       recorder.fetchRecording()
        return recorder
     }()
  

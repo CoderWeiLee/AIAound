@@ -11,14 +11,22 @@ class AudioViewController: UIViewController {
     var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         tableView = UITableView()
+        tableView.backgroundColor = .black
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(FileTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(FileTableViewCell.self))
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(view)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(newAudio), name: NSNotification.Name(kNewAudioNotificationName), object: nil)
+    }
+    
+    @objc func newAudio() {
+        tableView.reloadData()
     }
 }
 
@@ -32,10 +40,14 @@ extension AudioViewController: UITableViewDataSource, UITableViewDelegate {
         cell.record = AudioRecorder.sharedRecorder.recordings[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 
 extension AudioViewController: JXSegmentedListContainerViewListDelegate {
     func listView() -> UIView {
-        return view
+        return self.view
     }
 }

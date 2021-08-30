@@ -47,7 +47,11 @@ class FileViewController: UIViewController {
         
         //4.初始化JXSegmentedListContainerView
         listContainerView = JXSegmentedListContainerView(dataSource: self)
-        view.addSubview(self.listContainerView)
+        view.addSubview(listContainerView)
+        listContainerView.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(view)
+            make.top.equalTo(indicator.snp_bottom)
+        }
         //关联listContainer
         segmentedView.listContainer = listContainerView
 

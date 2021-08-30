@@ -11,7 +11,10 @@ class MotionViewController: UIViewController {
     var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         tableView = UITableView()
+        tableView.backgroundColor = .black
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MotionTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(MotionTableViewCell.self))
@@ -19,6 +22,11 @@ class MotionViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(view)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(newAudio), name: NSNotification.Name(kNewAudioNotificationName), object: nil)
+    }
+    
+    @objc func newAudio() {
+        tableView.reloadData()
     }
 }
 
@@ -36,6 +44,6 @@ extension MotionViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MotionViewController: JXSegmentedListContainerViewListDelegate {
     func listView() -> UIView {
-        return view
+        return self.view
     }
 }

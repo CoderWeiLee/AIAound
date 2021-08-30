@@ -10,7 +10,7 @@ class SendingTableViewCell: UITableViewCell {
     lazy var nameLabel: UILabel = {
         let name = UILabel()
         name.textColor = .white
-        name.font = UIFont.systemFont(ofSize: 8)
+        name.font = UIFont.systemFont(ofSize: 14)
         return name
     }()
     
@@ -30,7 +30,7 @@ class SendingTableViewCell: UITableViewCell {
     
     var record: Recording? {
         didSet {
-            nameLabel.text = record?.nameTime ?? "" + ".wav/csv"
+            nameLabel.text = "\(record?.nameTime ?? "") .wav/csv"
         }
     }
     
@@ -41,22 +41,23 @@ class SendingTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .black
         contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
-            make.left.equalTo(contentView).offset(10)
+            make.left.equalTo(contentView).offset(15)
             make.centerY.equalTo(contentView)
         }
         
         contentView.addSubview(selectBtn)
         selectBtn.snp.makeConstraints { make in
-            make.right.equalTo(contentView).offset(-11)
+            make.right.equalTo(contentView).offset(-22)
             make.centerY.equalTo(contentView)
         }
         
         contentView.addSubview(separatorLine)
         separatorLine.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(contentView)
-            make.height.equalTo(1)
+            make.height.equalTo(0.5)
         }
     }
     

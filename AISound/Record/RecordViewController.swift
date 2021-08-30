@@ -44,7 +44,16 @@ class RecordViewController: UIViewController {
     //MARK: - 开始
     @objc func start() {
         startBtn.isSelected = !startBtn.isSelected
-        startBtn.isSelected ? AudioRecorder.sharedRecorder.startRecord() : AudioRecorder.sharedRecorder.stopRecord()
+        startBtn.isSelected ? startRecords() : stopRecords()
+    }
+    
+    private func startRecords() {
+        AudioRecorder.sharedRecorder.startRecord()
+    }
+    
+    private func stopRecords() {
+        AudioRecorder.sharedRecorder.stopRecord()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNewAudioNotificationName), object: nil)
     }
     
     override func viewDidLoad() {
