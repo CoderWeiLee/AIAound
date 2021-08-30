@@ -24,8 +24,11 @@ class FileTableViewCell: UITableViewCell {
     lazy var playBtn: UIButton = {
         let play = UIButton(type: .custom)
         play.setImage(UIImage(named: "片段-播放"), for: .normal)
+        play.setImage(UIImage(named: "片段-暂停"), for: .selected)
         play.setTitle("Play", for: .normal)
+        play.setTitle("Stop", for: .selected)
         play.setTitleColor(UIColor(white: 0.9, alpha: 1), for: .normal)
+        play.setTitleColor(UIColor(white: 0.9, alpha: 1), for: .selected)
         play.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         play.backgroundColor = UIColor(hexString: "#2e2e2e")
         play.layer.cornerRadius = 14
@@ -50,7 +53,16 @@ class FileTableViewCell: UITableViewCell {
     
     //MARK: - 播放
     @objc func playAudio() {
-        
+        playBtn.isSelected = !playBtn.isSelected
+        playBtn.isSelected ? play() : stop()
+    }
+    
+    private func play() {
+        AudioPlayer.sharedPlayer.startPlay(audio: record!.fileURL)
+    }
+    
+    private func stop() {
+        AudioPlayer.sharedPlayer.stopPlay()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

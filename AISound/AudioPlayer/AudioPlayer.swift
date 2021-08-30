@@ -13,7 +13,10 @@ import UIKit
 
 
 class AudioPlayer: NSObject, AVAudioPlayerDelegate {
-    
+    static let sharedPlayer : AudioPlayer = {
+       let player = AudioPlayer()
+       return player
+    }()
     var audioPlayer: AVAudioPlayer!
     
     var flagPlay = false
