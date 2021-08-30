@@ -35,6 +35,7 @@ class RecordViewController: UIViewController {
         btn.layer.cornerRadius = 8
         btn.layer.masksToBounds = true
         btn.setTitle("Start", for: .normal)
+        btn.setTitle("Stop", for: .selected)
         btn.setTitleColor(.white, for: .normal)
         btn.addTarget(self, action: #selector(start), for: .touchUpInside)
         return btn
@@ -42,7 +43,8 @@ class RecordViewController: UIViewController {
     
     //MARK: - 开始
     @objc func start() {
-        
+        startBtn.isSelected = !startBtn.isSelected
+        startBtn.isSelected ? AudioRecorder.sharedRecorder.startRecord() : AudioRecorder.sharedRecorder.stopRecord()
     }
     
     override func viewDidLoad() {

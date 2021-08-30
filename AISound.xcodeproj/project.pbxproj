@@ -29,6 +29,11 @@
 		D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A926CE029B00E89291 /* AILoginManager.swift */; };
 		D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3AB26CE037C00E89291 /* Constants.swift */; };
 		D0F2F51826D38A1000793164 /* AITabbarController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */; };
+		D0FEA27826DC5C0700FE58CC /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */; };
+		D0FEA27926DC5C0700FE58CC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */; };
+		D0FEA27B26DC5C1200FE58CC /* DataSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27A26DC5C1200FE58CC /* DataSender.swift */; };
+		D0FEA27D26DC5C1E00FE58CC /* MotionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27C26DC5C1E00FE58CC /* MotionRecord.swift */; };
+		D0FEA27F26DC5C2100FE58CC /* Supply.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27E26DC5C2100FE58CC /* Supply.swift */; };
 		D3934C89BB7EBAB75CC2FF7F /* Pods_AISound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC2E4AF2C9CBC05E893641D /* Pods_AISound.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,11 @@
 		D0C9B3A926CE029B00E89291 /* AILoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILoginManager.swift; sourceTree = "<group>"; };
 		D0C9B3AB26CE037C00E89291 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITabbarController.swift.swift; sourceTree = "<group>"; };
+		D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		D0FEA27A26DC5C1200FE58CC /* DataSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSender.swift; sourceTree = "<group>"; };
+		D0FEA27C26DC5C1E00FE58CC /* MotionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionRecord.swift; sourceTree = "<group>"; };
+		D0FEA27E26DC5C2100FE58CC /* Supply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supply.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,7 @@
 		D01EDB9F26B4C92D00531418 /* AISound */ = {
 			isa = PBXGroup;
 			children = (
+				D0FEA27526DC5BEC00FE58CC /* AudioPlayer */,
 				D0C9B3A326CDF9D000E89291 /* Common */,
 				D0C9B39F26CDF8ED00E89291 /* Me */,
 				D0C9B39E26CDF8E500E89291 /* Feedback */,
@@ -235,6 +246,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D0FEA27526DC5BEC00FE58CC /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */,
+				D0FEA27A26DC5C1200FE58CC /* DataSender.swift */,
+				D0FEA27C26DC5C1E00FE58CC /* MotionRecord.swift */,
+				D0FEA27E26DC5C2100FE58CC /* Supply.swift */,
+				D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,18 +379,23 @@
 				D09047A726CCAD78000F215B /* MotionViewController.swift in Sources */,
 				D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */,
 				D0F2F51826D38A1000793164 /* AITabbarController.swift.swift in Sources */,
+				D0FEA27D26DC5C1E00FE58CC /* MotionRecord.swift in Sources */,
 				D09047AD26CCB323000F215B /* SendingTableViewCell.swift in Sources */,
 				D035894B26B6EBC2001EDB55 /* FileViewController.swift in Sources */,
 				D09047A126CA3436000F215B /* Common.swift in Sources */,
 				D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */,
+				D0FEA27F26DC5C2100FE58CC /* Supply.swift in Sources */,
 				D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */,
 				D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */,
 				D09047A326CC9B24000F215B /* FileTableViewCell.swift in Sources */,
+				D0FEA27B26DC5C1200FE58CC /* DataSender.swift in Sources */,
+				D0FEA27826DC5C0700FE58CC /* AudioRecorder.swift in Sources */,
 				D09047A526CCAD5D000F215B /* AudioViewController.swift in Sources */,
 				D035894D26B6EBED001EDB55 /* FeedbackViewController.swift in Sources */,
 				D09047A926CCAD91000F215B /* SendingViewController.swift in Sources */,
 				D01EDBA126B4C92D00531418 /* AppDelegate.swift in Sources */,
 				D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */,
+				D0FEA27926DC5C0700FE58CC /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
