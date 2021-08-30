@@ -90,7 +90,7 @@ class AudioRecorder: NSObject {
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
         for audio in directoryContents {
-            let recording = Recording(fileURL: audio, createdAt: getFileDate(for: audio), fileSize: covertToFileString(with: sizeForLocalFilePath(filePath: audio.absoluteString)))
+            let recording = Recording(fileURL: audio, createdAt: getFileDate(for: audio), fileSize: covertToFileString(with: sizeForLocalFilePath(filePath: audio.path)))
             recordings.append(recording)
         }
         
