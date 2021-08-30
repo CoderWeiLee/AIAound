@@ -24,4 +24,8 @@ let navigationHeight: CGFloat = (bottomSafeAreaHeight == 0 ? 64 :88)
 //tabbar 高度
 let tabBarHeight: CGFloat = (bottomSafeAreaHeight + 49)
 
+let kScrrnWidth = UIScreen.main.bounds.size.width
+
+let kScreenHeight = UIScreen.main.bounds.size.height
+
 

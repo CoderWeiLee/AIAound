@@ -18,20 +18,31 @@ class FileViewController: UIViewController {
         //1.初始化JXSegmentedView
         segmentedView = JXSegmentedView()
         segmentedView.delegate = self
+        segmentedView.backgroundColor = UIColor(hexString: "#1fbad2")
         view.addSubview(segmentedView)
+        segmentedView.snp.makeConstraints { make in
+            make.left.right.equalTo(view)
+            make.top.equalTo(view).offset(topSafeAreaHeight + statusBarHeight)
+            make.height.equalTo(50)
+        }
         
         //2.初始化dataSource
         //segmentedDataSource一定要通过属性强持有，不然会被释放掉
         segmentedDataSource = JXSegmentedTitleDataSource()
         //配置数据源相关配置属性
         segmentedDataSource.titles = ["Audio", "Motion", "Sending"]
+        segmentedDataSource.titleNormalColor = UIColor(white: 1, alpha: 0.7)
+        segmentedDataSource.titleSelectedColor = UIColor(white: 1, alpha: 1)
+        segmentedDataSource.titleNormalFont = UIFont.systemFont(ofSize: 13)
+        segmentedDataSource.titleSelectedFont = UIFont.systemFont(ofSize: 13)
         segmentedDataSource.isTitleColorGradientEnabled = true
         //关联dataSource
         segmentedView.dataSource = segmentedDataSource
         
         //3.初始化指示器indicator
         let indicator = JXSegmentedIndicatorLineView()
-        indicator.indicatorWidth = 20
+        indicator.indicatorColor = UIColor(hexString: "#242202")!
+        indicator.indicatorHeight = 2
         segmentedView.indicators = [indicator]
     }
 
