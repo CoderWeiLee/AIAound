@@ -7,12 +7,14 @@ PODS:
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
   - SnapKit (4.2.0)
+  - SwiftCSV (0.6.0)
 
 DEPENDENCIES:
   - JKSwiftExtension
   - JXSegmentedView
   - KRProgressHUD
   - SnapKit
+  - SwiftCSV
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
@@ -22,6 +24,7 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - SnapKit
+    - SwiftCSV
 
 SPEC CHECKSUMS:
   JKSwiftExtension: 36228e99699b676a20f155bf862c76094766f6aa
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftCSV: ebc63cacc3820042537288c0cc647946261f7c2c
 
-PODFILE CHECKSUM: 0cee350a1f36b30fb2fa3d4817b568fdb1470070
+PODFILE CHECKSUM: 30d140c4b5f1dd6d3b22b263a245565f17567f5b
 
 COCOAPODS: 1.10.0

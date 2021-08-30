@@ -7,6 +7,7 @@
 
 import UIKit
 import JXSegmentedView
+import SwiftCSV
 class MotionViewController: UIViewController {
     var tableView: UITableView!
     override func viewDidLoad() {
@@ -39,6 +40,10 @@ extension MotionViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MotionTableViewCell.self), for: indexPath) as! MotionTableViewCell
         cell.record = AudioRecorder.sharedRecorder.recordings[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 

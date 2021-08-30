@@ -8,6 +8,8 @@ target 'AISound' do
   pod 'JKSwiftExtension'
   pod 'JXSegmentedView'
   pod "KRProgressHUD"
+  pod "SwiftCSV"
+
   # Pods for AISound
 
 end
