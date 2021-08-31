@@ -6,7 +6,9 @@
 //
 
 import Foundation
-class AIUser: NSObject, NSCoding {
+class AIUser: NSObject, NSCoding, NSSecureCoding {
+    static var supportsSecureCoding: Bool = true
+    
     struct PropertyKey {
         static let firstNameKey = "firstName"
         static let lastNameKey = "lastName"

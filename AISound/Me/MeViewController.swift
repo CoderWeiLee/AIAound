@@ -14,10 +14,10 @@ class MeViewController: UIViewController {
     }()
     
     lazy var iconImageView: UIImageView = {
-       let icon = UIImageView()
-       icon.image = UIImage(systemName: "person.crop.square")
-       icon.layer.cornerRadius = 4
+       let icon = UIImageView(image: UIImage(named: "gtl"))
+       icon.layer.cornerRadius = 40
        icon.layer.masksToBounds = true
+       icon.contentMode = .scaleAspectFit
        return icon
     }()
     
@@ -30,8 +30,9 @@ class MeViewController: UIViewController {
     
     lazy var idLabel: UILabel = {
        let idL = UILabel()
-       idL.textColor = UIColor(hexString: "#e2e2e2")
+        idL.textColor = UIColor(white: 1, alpha: 0.7)
        idL.font = UIFont.systemFont(ofSize: 13)
+       idL.text = "ID:000000001"
        return idL
     }()
     
@@ -50,14 +51,16 @@ class MeViewController: UIViewController {
     lazy var daysTopLabel: UILabel = {
         let top = UILabel()
         top.textColor = UIColor(hexString: "#2a82e4")
-        top.font = UIFont.systemFont(ofSize: 10)
+        top.font = UIFont.systemFont(ofSize: 20)
+        top.text = "1"
         return top
     }()
     
     lazy var daysBottomLabel: UILabel = {
         let bottom = UILabel()
         bottom.textColor = UIColor(hexString: "#2a82e4")
-        bottom.font = UIFont.systemFont(ofSize: 7)
+        bottom.font = UIFont.systemFont(ofSize: 14)
+        bottom.text = "Days"
         return bottom
     }()
     
@@ -69,14 +72,16 @@ class MeViewController: UIViewController {
     lazy var timesTopLabel: UILabel = {
         let top = UILabel()
         top.textColor = UIColor(hexString: "#2a82e4")
-        top.font = UIFont.systemFont(ofSize: 10)
+        top.font = UIFont.systemFont(ofSize: 20)
+        top.text = "\(Int(arc4random_uniform(100)))"
         return top
     }()
     
     lazy var timesBottomLabel: UILabel = {
         let bottom = UILabel()
         bottom.textColor = UIColor(hexString: "#2a82e4")
-        bottom.font = UIFont.systemFont(ofSize: 7)
+        bottom.font = UIFont.systemFont(ofSize: 14)
+        bottom.text = "Times"
         return bottom
     }()
     
@@ -209,6 +214,7 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nameLabel.text = "\(AILoginManager.sharedLoginManager.currentUser?.firstName ?? "")\(AILoginManager.sharedLoginManager.currentUser?.lastName ?? "")"
         view.backgroundColor = .black
         view.addSubview(topContainerView)
         topContainerView.snp.makeConstraints { make in
@@ -221,12 +227,15 @@ class MeViewController: UIViewController {
         iconImageView.snp.makeConstraints { make in
             make.left.equalTo(topContainerView).offset(5)
             make.top.equalTo(topContainerView).offset(20)
+            make.width.height.equalTo(80)
         }
         
         topContainerView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(iconImageView.snp_right).offset(5)
             make.top.equalTo(iconImageView).offset(15)
+            make.right.equalTo(topContainerView)
+            make.height.equalTo(14)
         }
         
         topContainerView.addSubview(idLabel)
@@ -243,14 +252,15 @@ class MeViewController: UIViewController {
         
         topContainerView.addSubview(daysContainerView)
         daysContainerView.snp.makeConstraints { make in
-            make.left.top.bottom.equalTo(topContainerView)
+            make.top.equalTo(iconImageView.snp.bottom).offset(15)
+            make.left.bottom.equalTo(topContainerView)
             make.width.equalTo(topContainerView).multipliedBy(0.5)
         }
         
         topContainerView.addSubview(timesContainerView)
         timesContainerView.snp.makeConstraints { make in
-            make.top.right.bottom.equalTo(topContainerView)
-            make.width.equalTo(daysContainerView)
+            make.right.bottom.equalTo(topContainerView)
+            make.top.width.equalTo(daysContainerView)
         }
         
         daysContainerView.addSubview(daysTopLabel)
@@ -264,7 +274,6 @@ class MeViewController: UIViewController {
             make.centerX.equalTo(daysContainerView)
             make.top.equalTo(daysTopLabel.snp_bottom).offset(5)
         }
-        
         timesContainerView.addSubview(timesTopLabel)
         timesTopLabel.snp.makeConstraints { make in
             make.centerX.equalTo(timesContainerView)
@@ -274,7 +283,7 @@ class MeViewController: UIViewController {
         timesContainerView.addSubview(timesBottomLabel)
         timesBottomLabel.snp.makeConstraints { make in
             make.centerX.equalTo(timesContainerView)
-            make.top.equalTo(timesContainerView.snp_bottom).offset(5)
+            make.top.equalTo(timesTopLabel.snp_bottom).offset(5)
         }
         
         view.addSubview(emailContainerView)
