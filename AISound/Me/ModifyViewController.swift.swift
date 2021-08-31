@@ -34,9 +34,24 @@ class ModifyViewController: UIViewController {
         confirmLabel = UILabel()
         confirmLabel.textColor = UIColor(white: 1, alpha: 0.7)
         oldTextField = UITextField()
+        oldTextField.font = UIFont.systemFont(ofSize: 13)
+        oldTextField.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        oldTextField.layer.cornerRadius = 10
+        oldTextField.layer.masksToBounds = true
+        oldTextField.layer.borderWidth = 0.5
         oldTextField.textColor = UIColor(white: 1, alpha: 0.7)
         newTextField = UITextField()
+        newTextField.font = UIFont.systemFont(ofSize: 13)
+        newTextField.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        newTextField.layer.cornerRadius = 10
+        newTextField.layer.masksToBounds = true
+        newTextField.layer.borderWidth = 0.5
         confirmTextField = UITextField()
+        confirmTextField.font = UIFont.systemFont(ofSize: 13)
+        confirmTextField.layer.borderColor = UIColor(white: 1, alpha: 0.7).cgColor
+        confirmTextField.layer.cornerRadius = 10
+        confirmTextField.layer.masksToBounds = true
+        confirmTextField.layer.borderWidth = 0.5
         cancelBtn = UIButton(type: .custom)
         confirmBtn = UIButton(type: .custom)
         cancelBtn.addTarget(self, action: #selector(cancel), for: .touchUpInside)
@@ -53,12 +68,14 @@ class ModifyViewController: UIViewController {
             make.centerY.equalTo(oldLabel)
             make.right.equalTo(view).offset(-15)
             make.left.equalTo(oldLabel.snp_right).offset(5)
+            make.height.equalTo(30)
         }
         
         view.addSubview(newLabel)
         newLabel.snp.makeConstraints { make in
             make.left.equalTo(oldLabel)
-            make.top.equalTo(oldLabel.snp_bottom).offset(5)
+            make.top.equalTo(oldLabel.snp_bottom).offset(40)
+            make.width.equalTo(oldLabel)
         }
         
         view.addSubview(newTextField)
@@ -66,12 +83,14 @@ class ModifyViewController: UIViewController {
             make.centerY.equalTo(newLabel)
             make.right.equalTo(view).offset(-15)
             make.left.equalTo(newLabel.snp_right).offset(5)
+            make.height.equalTo(30)
         }
         
         view.addSubview(confirmLabel)
         confirmLabel.snp.makeConstraints { make in
             make.left.equalTo(newLabel)
-            make.top.equalTo(newLabel.snp_bottom).offset(5)
+            make.top.equalTo(newLabel.snp_bottom).offset(40)
+            make.width.equalTo(oldLabel)
         }
         
         view.addSubview(confirmTextField)
@@ -79,6 +98,7 @@ class ModifyViewController: UIViewController {
             make.centerY.equalTo(confirmLabel)
             make.right.equalTo(view).offset(-15)
             make.left.equalTo(confirmLabel.snp_right).offset(5)
+            make.height.equalTo(30)
         }
         
         navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelBtn)
@@ -88,21 +108,31 @@ class ModifyViewController: UIViewController {
     func setEmail() {
         oldLabel.text = "旧的邮箱账号:"
         newLabel.text = "新的邮箱账号:"
-        confirmLabel.text = "再次确认邮箱"
-        oldTextField.text = AILoginManager.sharedLoginManager.currentUser?.password
-        newTextField.placeholder = "请输入您的邮箱账号"
-        confirmTextField.placeholder = "请再次输入您的邮箱账号"
+        confirmLabel.text = "再次确认邮箱:"
+        oldTextField.text = AILoginManager.sharedLoginManager.currentUser?.email
+        let newAttr = NSMutableAttributedString(string: "请输入您的邮箱账号")
+        newAttr.addAttribute(.foregroundColor, value: UIColor(white: 1, alpha: 0.7), range: NSMakeRange(0, newAttr.length))
+        newAttr.addAttribute(.font, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(0, newAttr.length))
+        newTextField.attributedPlaceholder = newAttr
+        let confirmAttr = NSMutableAttributedString(string: "请再次输入您的邮箱账号")
+        confirmAttr.addAttribute(.foregroundColor, value: UIColor(white: 1, alpha: 0.7), range: NSMakeRange(0, confirmAttr.length))
+        confirmAttr.addAttribute(.font, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(0, newAttr.length))
+        confirmTextField.attributedPlaceholder = confirmAttr
     }
     
     func setPassword() {
         oldLabel.text = "旧的密码:"
         newLabel.text = "新的密码:"
-        confirmLabel.text = "再次确认密码"
+        confirmLabel.text = "再次确认:"
         oldTextField.text = AILoginManager.sharedLoginManager.currentUser?.password
         let newAttr = NSMutableAttributedString(string: "请输入您的新密码")
         newAttr.addAttribute(.foregroundColor, value: UIColor(white: 1, alpha: 0.7), range: NSMakeRange(0, newAttr.length))
+        newAttr.addAttribute(.font, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(0, newAttr.length))
         newTextField.attributedPlaceholder = newAttr
-        confirmTextField.placeholder = "请再次输入您的新密码"
+        let confirmAttr = NSMutableAttributedString(string: "请再次输入您的新密码")
+        confirmAttr.addAttribute(.foregroundColor, value: UIColor(white: 1, alpha: 0.7), range: NSMakeRange(0, confirmAttr.length))
+        confirmAttr.addAttribute(.font, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(0, newAttr.length))
+        confirmTextField.attributedPlaceholder = confirmAttr
     }
     
     func saveEmail(with newValue: String) {
