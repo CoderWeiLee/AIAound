@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import KRProgressHUD
 class UploadProgressView: UIView {
     lazy var progressView: UIProgressView = {
         let progress = UIProgressView()
@@ -28,12 +29,16 @@ class UploadProgressView: UIView {
        label.textColor = .white
        label.textAlignment = .center
        label.font = UIFont.systemFont(ofSize: 12)
+       label.text = "准备上传中..."
        return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(progressView)
+        self.backgroundColor = UIColor(hexString: "#1fbad2", alpha: 0.8)
+        self.layer.cornerRadius = 10
+        self.layer.masksToBounds = true
         progressView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(19)
             make.bottom.equalTo(self).offset(-15)
@@ -60,6 +65,7 @@ class UploadProgressView: UIView {
     }
     
     @objc func close() {
+        KRProgressHUD.showMessage("上传已取消")
         self.removeFromSuperview()
     }
 }
