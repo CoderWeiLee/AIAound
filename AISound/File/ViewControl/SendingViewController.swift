@@ -57,8 +57,10 @@ class SendingViewController: UIViewController {
         DataSender.sharedSender.update =  { [weak self] (fileName, prog) in
             self?.uploadProgress.noticeLabel.text = "正在上传\(fileName)"
             self?.uploadProgress.progressView.progress = prog
+            print("正在上传\(fileName)","进度\(prog)")
         }
         DataSender.sharedSender.complete = {
+            print("上传完成")
             KRProgressHUD.showMessage("上传完成")
             self.uploadProgress.removeFromSuperview()
         }

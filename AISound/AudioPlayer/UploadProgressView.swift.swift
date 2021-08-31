@@ -18,7 +18,7 @@ class UploadProgressView: UIView {
     
     lazy var closeBtn: UIButton = {
         let btn = UIButton(type: .custom)
-        btn.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
+        btn.setImage(UIImage(systemName: "minus.circle.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
         btn.addTarget(self, action: #selector(close), for: .touchUpInside)
         return btn
     }()
@@ -36,7 +36,7 @@ class UploadProgressView: UIView {
         addSubview(progressView)
         progressView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(19)
-            make.bottom.equalTo(self).offset(-5)
+            make.bottom.equalTo(self).offset(-15)
             make.right.equalTo(self).offset(-100)
         }
         

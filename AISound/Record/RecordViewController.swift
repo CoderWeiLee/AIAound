@@ -76,7 +76,7 @@ class RecordViewController: UIViewController {
     private func startRecords() {
         AudioRecorder.sharedRecorder.startRecord()
         recordView.isHidden = false
-        timer.resume()
+        self.timer.resume()
         noticeLabel.text = "Recording..."
     }
     
@@ -84,9 +84,10 @@ class RecordViewController: UIViewController {
         AudioRecorder.sharedRecorder.stopRecord()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNewAudioNotificationName), object: nil)
         recordView.isHidden = true
-        timer.cancel()
+        timer.suspend()
         recordLabel.text = "00:00"
         noticeLabel.text = "Saved"
+        seconds = 0
     }
     
     override func viewDidLoad() {
