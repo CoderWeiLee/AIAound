@@ -29,6 +29,7 @@
 		D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3A926CE029B00E89291 /* AILoginManager.swift */; };
 		D0C9B3AC26CE037C00E89291 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9B3AB26CE037C00E89291 /* Constants.swift */; };
 		D0E94B3926DCAB08006C8A01 /* AudioRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E94B3826DCAB08006C8A01 /* AudioRecordView.swift */; };
+		D0E94B3B26DDBB3F006C8A01 /* UploadProgressView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E94B3A26DDBB3F006C8A01 /* UploadProgressView.swift.swift */; };
 		D0F2F51826D38A1000793164 /* AITabbarController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */; };
 		D0FEA27826DC5C0700FE58CC /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */; };
 		D0FEA27926DC5C0700FE58CC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */; };
@@ -66,6 +67,7 @@
 		D0C9B3A926CE029B00E89291 /* AILoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AILoginManager.swift; sourceTree = "<group>"; };
 		D0C9B3AB26CE037C00E89291 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D0E94B3826DCAB08006C8A01 /* AudioRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordView.swift; sourceTree = "<group>"; };
+		D0E94B3A26DDBB3F006C8A01 /* UploadProgressView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProgressView.swift.swift; sourceTree = "<group>"; };
 		D0F2F51726D38A1000793164 /* AITabbarController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITabbarController.swift.swift; sourceTree = "<group>"; };
 		D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				D0FEA27E26DC5C2100FE58CC /* Supply.swift */,
 				D0FEA27726DC5C0700FE58CC /* AudioPlayer.swift */,
 				D0E94B3826DCAB08006C8A01 /* AudioRecordView.swift */,
+				D0E94B3A26DDBB3F006C8A01 /* UploadProgressView.swift.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				D035894B26B6EBC2001EDB55 /* FileViewController.swift in Sources */,
 				D09047A126CA3436000F215B /* Common.swift in Sources */,
 				D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */,
+				D0E94B3B26DDBB3F006C8A01 /* UploadProgressView.swift.swift in Sources */,
 				D0FEA27F26DC5C2100FE58CC /* Supply.swift in Sources */,
 				D0C9B3AA26CE029B00E89291 /* AILoginManager.swift in Sources */,
 				D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */,
@@ -548,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XU3T6FFXAY;
+				DEVELOPMENT_TEAM = C9ANJ7EAW8;
 				INFOPLIST_FILE = AISound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XU3T6FFXAY;
+				DEVELOPMENT_TEAM = C9ANJ7EAW8;
 				INFOPLIST_FILE = AISound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,6 +7,7 @@
 
 import UIKit
 import JXSegmentedView
+import KRProgressHUD
 class SendingViewController: UIViewController {
     var tableView: UITableView!
     lazy var uploadBtn: UIButton = {
@@ -15,6 +16,11 @@ class SendingViewController: UIViewController {
         btn.tintColor = UIColor(hexString: "#4350AF")
         btn.addTarget(self, action: #selector(upload), for: .touchUpInside)
         return btn
+    }()
+    
+    lazy var uploadProgress: UploadProgressView = {
+        let progress = UploadProgressView()
+        return progress
     }()
     
     var selected = [Recording]()
@@ -39,7 +45,23 @@ class SendingViewController: UIViewController {
             make.left.equalTo(view).offset(13)
             make.bottom.equalTo(view).offset(-146)
         }
+        
+        view.addSubview(uploadProgress)
+        uploadProgress.isHidden = true
+        uploadProgress.snp.makeConstraints { make in
+            make.left.right.equalTo(view)
+            make.bottom.equalTo(view).offset(-80)
+            make.height.equalTo(60)
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(newAudio), name: NSNotification.Name(kNewAudioNotificationName), object: nil)
+        DataSender.sharedSender.update =  { [weak self] (fileName, prog) in
+            self?.uploadProgress.noticeLabel.text = "正在上传\(fileName)"
+            self?.uploadProgress.progressView.progress = prog
+        }
+        DataSender.sharedSender.complete = {
+            KRProgressHUD.showMessage("上传完成")
+            self.uploadProgress.removeFromSuperview()
+        }
     }
     
     @objc func newAudio() {
@@ -47,7 +69,10 @@ class SendingViewController: UIViewController {
     }
     
     @objc func upload() {
-        
+        uploadProgress.isHidden = false
+        for record in selected {
+            DataSender.sharedSender.sendAudio(filePath: record.fileURL)
+        }
     }
 }
 

@@ -9,7 +9,7 @@ target 'AISound' do
   pod 'JXSegmentedView'
   pod "KRProgressHUD"
   pod "SwiftCSV"
-
+  pod 'Alamofire'
   # Pods for AISound
 
 end
