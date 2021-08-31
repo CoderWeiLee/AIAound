@@ -207,11 +207,17 @@ class MeViewController: UIViewController {
     }
     
     @objc func emailAction() {
-        
+        let vc = ModifyViewController()
+        vc.modifyType = .Email
+        navigationController?.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func pwdAction() {
-        
+        let vc = ModifyViewController()
+        vc.modifyType = .Password
+        navigationController?.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func logoutAction() {

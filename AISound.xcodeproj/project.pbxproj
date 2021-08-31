@@ -18,6 +18,7 @@
 		D035895126B7888E001EDB55 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895026B7888E001EDB55 /* WelcomeViewController.swift */; };
 		D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895226BF8C9D001EDB55 /* RegisterViewController.swift */; };
 		D035895526BF8CA5001EDB55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035895426BF8CA5001EDB55 /* LoginViewController.swift */; };
+		D07061E026DE03A400227440 /* ModifyViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07061DF26DE03A400227440 /* ModifyViewController.swift.swift */; };
 		D09047A126CA3436000F215B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047A026CA3436000F215B /* Common.swift */; };
 		D09047A326CC9B24000F215B /* FileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047A226CC9B24000F215B /* FileTableViewCell.swift */; };
 		D09047A526CCAD5D000F215B /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09047A426CCAD5D000F215B /* AudioViewController.swift */; };
@@ -56,6 +57,7 @@
 		D035895026B7888E001EDB55 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D035895226BF8C9D001EDB55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D035895426BF8CA5001EDB55 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D07061DF26DE03A400227440 /* ModifyViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift.swift; sourceTree = "<group>"; };
 		D09047A026CA3436000F215B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		D09047A226CC9B24000F215B /* FileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTableViewCell.swift; sourceTree = "<group>"; };
 		D09047A426CCAD5D000F215B /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D035894E26B6EC00001EDB55 /* MeViewController.swift */,
+				D07061DF26DE03A400227440 /* ModifyViewController.swift.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				D0FEA27B26DC5C1200FE58CC /* DataSender.swift in Sources */,
 				D0FEA27826DC5C0700FE58CC /* AudioRecorder.swift in Sources */,
 				D09047A526CCAD5D000F215B /* AudioViewController.swift in Sources */,
+				D07061E026DE03A400227440 /* ModifyViewController.swift.swift in Sources */,
 				D035894D26B6EBED001EDB55 /* FeedbackViewController.swift in Sources */,
 				D09047A926CCAD91000F215B /* SendingViewController.swift in Sources */,
 				D01EDBA126B4C92D00531418 /* AppDelegate.swift in Sources */,
