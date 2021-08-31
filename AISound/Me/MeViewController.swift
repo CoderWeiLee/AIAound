@@ -23,7 +23,7 @@ class MeViewController: UIViewController {
     
     lazy var nameLabel: UILabel = {
        let name = UILabel()
-       name.textColor = .white
+       name.textColor = UIColor(white: 1, alpha: 0.85)
        name.font = UIFont.systemFont(ofSize: 15)
        return name
     }()
@@ -193,6 +193,12 @@ class MeViewController: UIViewController {
        return line
     }()
     
+    lazy var verticalLine: UIView = {
+       let line = UIView()
+       line.backgroundColor = UIColor(white: 1, alpha: 0.2)
+       return line
+    }()
+    
     
     
     //MARK: - Actions
@@ -274,6 +280,15 @@ class MeViewController: UIViewController {
             make.centerX.equalTo(daysContainerView)
             make.top.equalTo(daysTopLabel.snp_bottom).offset(5)
         }
+        
+        daysContainerView.addSubview(verticalLine)
+        verticalLine.snp.makeConstraints { make in
+            make.right.equalTo(daysContainerView)
+            make.centerY.equalTo(daysContainerView)
+            make.height.equalTo(40)
+            make.width.equalTo(0.5)
+        }
+        
         timesContainerView.addSubview(timesTopLabel)
         timesTopLabel.snp.makeConstraints { make in
             make.centerX.equalTo(timesContainerView)
@@ -307,7 +322,7 @@ class MeViewController: UIViewController {
         
         emailContainerView.addSubview(emailArrow)
         emailArrow.snp.makeConstraints { make in
-            make.right.equalTo(emailContainerView).offset(-15)
+            make.right.equalTo(emailContainerView).offset(-20)
             make.centerY.equalTo(emailContainerView)
         }
         
@@ -319,7 +334,7 @@ class MeViewController: UIViewController {
         emailContainerView.addSubview(emailLine)
         emailLine.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(emailContainerView)
-            make.height.equalTo(1)
+            make.height.equalTo(0.5)
         }
         
         view.addSubview(pwdContainerView)
@@ -343,7 +358,7 @@ class MeViewController: UIViewController {
         
         pwdContainerView.addSubview(pwdArrow)
         pwdArrow.snp.makeConstraints { make in
-            make.right.equalTo(pwdContainerView).offset(-15)
+            make.right.equalTo(pwdContainerView).offset(-20)
             make.centerY.equalTo(pwdContainerView)
         }
         
@@ -355,7 +370,7 @@ class MeViewController: UIViewController {
         pwdContainerView.addSubview(pwdLine)
         pwdLine.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(pwdContainerView)
-            make.height.equalTo(1)
+            make.height.equalTo(0.5)
         }
         
         view.addSubview(logoutContainerView)
@@ -379,7 +394,7 @@ class MeViewController: UIViewController {
         
         logoutContainerView.addSubview(logoutArrow)
         logoutArrow.snp.makeConstraints { make in
-            make.right.equalTo(logoutContainerView).offset(-15)
+            make.right.equalTo(logoutContainerView).offset(-20)
             make.centerY.equalTo(logoutContainerView)
         }
         
@@ -391,7 +406,7 @@ class MeViewController: UIViewController {
         logoutContainerView.addSubview(logoutLine)
         logoutLine.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(logoutContainerView)
-            make.height.equalTo(1)
+            make.height.equalTo(0.5)
         }
     }
 
