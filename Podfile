@@ -11,6 +11,7 @@ target 'AISound' do
   pod "SwiftCSV"
   pod 'Alamofire'
   pod 'RSKPlaceholderTextView'
+  pod 'ZLPhotoBrowser'
   # Pods for AISound
 
 end

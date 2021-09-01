@@ -10,6 +10,9 @@ PODS:
   - RSKPlaceholderTextView (6.1.0)
   - SnapKit (4.2.0)
   - SwiftCSV (0.6.0)
+  - ZLPhotoBrowser (4.1.7):
+    - ZLPhotoBrowser/Core (= 4.1.7)
+  - ZLPhotoBrowser/Core (4.1.7)
 
 DEPENDENCIES:
   - Alamofire
@@ -19,6 +22,7 @@ DEPENDENCIES:
   - RSKPlaceholderTextView
   - SnapKit
   - SwiftCSV
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
@@ -31,6 +35,7 @@ SPEC REPOS:
     - RSKPlaceholderTextView
     - SnapKit
     - SwiftCSV
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -42,7 +47,8 @@ SPEC CHECKSUMS:
   RSKPlaceholderTextView: 52f26e643b6f9bbf16f45cd2bbe2181b6dfe090c
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftCSV: ebc63cacc3820042537288c0cc647946261f7c2c
+  ZLPhotoBrowser: 8ea81aa5cbaaf8b97bf8830fed1b1f756a5e8894
 
-PODFILE CHECKSUM: cb8fac41a47bf0ad41e4af30f7b2cfcf6324940e
+PODFILE CHECKSUM: eceb207e1c94ab49479fb5132843e10fc090a2c9
 
 COCOAPODS: 1.10.0

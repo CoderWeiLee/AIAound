@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ZLPhotoBrowser
 class MeViewController: UIViewController {
     lazy var topContainerView: UIView = {
         let top = UIView()
@@ -93,6 +94,7 @@ class MeViewController: UIViewController {
     lazy var emailImgV: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(systemName: "envelope")
+        img.isUserInteractionEnabled = true
         return img
     }()
     
@@ -199,11 +201,21 @@ class MeViewController: UIViewController {
        return line
     }()
     
+    lazy var ps: ZLPhotoPreviewSheet = {
+        let ps = ZLPhotoPreviewSheet()
+        ps.selectImageBlock = { [weak self] (images, assets, isOriginal) in
+             self?.iconImageView.image = images.first
+             AILoginManager.sharedLoginManager.currentUser?.icon = images.first
+             UserDefaults.standard.saveCustomObject(customObject: AILoginManager.sharedLoginManager.currentUser!, key: currentUserKey)
+         }
+        return ps
+    }()
     
+    var tapGes: UITapGestureRecognizer!
     
     //MARK: - Actions
     @objc func arrowAction() {
-        
+        self.ps.showPhotoLibrary(sender: self)
     }
     
     @objc func emailAction() {
@@ -226,6 +238,11 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tapGes = UITapGestureRecognizer(target: self, action: #selector(arrowAction))
+        iconImageView.addGestureRecognizer(tapGes)
+        if let img = AILoginManager.sharedLoginManager.currentUser?.icon {
+            iconImageView.image = img
+        }
         self.nameLabel.text = "\(AILoginManager.sharedLoginManager.currentUser?.firstName ?? "")\(AILoginManager.sharedLoginManager.currentUser?.lastName ?? "")"
         view.backgroundColor = .black
         view.addSubview(topContainerView)
