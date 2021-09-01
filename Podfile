@@ -10,6 +10,7 @@ target 'AISound' do
   pod "KRProgressHUD"
   pod "SwiftCSV"
   pod 'Alamofire'
+  pod 'RSKPlaceholderTextView'
   # Pods for AISound
 
 end
