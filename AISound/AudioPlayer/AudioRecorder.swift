@@ -8,8 +8,8 @@
 import Foundation
 import Combine
 import AVFoundation
-
-
+import CoreMotion
+import KRProgressHUD
 
 class AudioRecorder: NSObject {
     static let sharedRecorder : AudioRecorder = {
@@ -23,14 +23,35 @@ class AudioRecorder: NSObject {
     var recordings = [Recording]()
     
     var flagRecord = false
+    let APP = CMHeadphoneMotionManager()
+    
+    let writer = CSVWriter()
+    var write: Bool = false
+    override init() {
+        super.init()
+        APP.delegate = self
+    }
+    
+    deinit {
+        write = false
+        writer.close()
+        APP.stopDeviceMotionUpdates()
+    }
     
     func startRecord() {
-        /*
-         Function: start recording
-         Parameter:
-         Return:
-         */
-        // set AVAudioSession, this is for hardware
+        //0.record motion
+        guard APP.isDeviceMotionAvailable else {
+//            self.Alert("Sorry", "Your device is not supported.")
+            KRProgressHUD.showMessage("Sorry, Your device is not supported.")
+            return
+        }
+        APP.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {[weak self] motion, error  in
+            guard let motion = motion, error == nil else { return }
+                self?.writer.write(motion)
+//            self?.printData(motion)
+        })
+        
+        //1.record av
         let avSession:AVAudioSession = AVAudioSession.sharedInstance()
         
         do{
@@ -75,15 +96,36 @@ class AudioRecorder: NSObject {
         } catch let err{
             print("Record Fail: \(err.localizedDescription)")
         }
-    } // End: func-startRecord
+    }
+    
+    func printData(_ data: CMDeviceMotion) {
+//        self.textView.text = """
+//            Quaternion:
+//                x: \(data.attitude.quaternion.x)
+//                y: \(data.attitude.quaternion.y)
+//                z: \(data.attitude.quaternion.z)
+//                w: \(data.attitude.quaternion.w)
+//            Attitude:
+//                pitch: \(data.attitude.pitch)
+//                roll: \(data.attitude.roll)
+//                yaw: \(data.attitude.yaw)
+//            Gravitational Acceleration:
+//                x: \(data.gravity.x)
+//                y: \(data.gravity.y)
+//                z: \(data.gravity.z)
+//            Rotation Rate:
+//                x: \(data.rotationRate.x)
+//                y: \(data.rotationRate.y)
+//                z: \(data.rotationRate.z)
+//            Acceleration:
+//                x: \(data.userAcceleration.x)
+//                y: \(data.userAcceleration.y)
+//                z: \(data.userAcceleration.z)
+//            """
+    }
     
     
     func fetchRecording() {
-        /*
-         Function: fetech and list all recordings
-         Parameter:
-         Return:
-         */
         recordings.removeAll()
         
         let fileManager = FileManager.default
@@ -100,11 +142,6 @@ class AudioRecorder: NSObject {
 
     
     func stopRecord() {
-        /*
-         Function: stop recording
-         Parameter:
-         Return:
-         */
         audioRecorder.stop()
         flagRecord = false
         
@@ -113,11 +150,6 @@ class AudioRecorder: NSObject {
     
     
     func deleteRecording(deleteUrls: [URL]) {
-        /*
-         Function: delete recording files
-         Parameter:
-         Return:
-         */
         for url in deleteUrls {
             print(url)
             do {
@@ -128,7 +160,11 @@ class AudioRecorder: NSObject {
         }
         
         fetchRecording()
-    } //End: func-deleteRecording
+    }
 
+}
+
+extension AudioRecorder: CMHeadphoneMotionManagerDelegate {
+    
 }
 

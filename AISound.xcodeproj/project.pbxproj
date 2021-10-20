@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D010FFA1271FF271005A7C78 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010FFA0271FF271005A7C78 /* CSVWriter.swift */; };
 		D01EDBA126B4C92D00531418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01EDBA026B4C92D00531418 /* AppDelegate.swift */; };
 		D01EDBA826B4C92D00531418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01EDBA626B4C92D00531418 /* Main.storyboard */; };
 		D01EDBAA26B4C92D00531418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01EDBA926B4C92D00531418 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		35C771A0FD4DFE7E84EE149C /* Pods-AISound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISound.release.xcconfig"; path = "Target Support Files/Pods-AISound/Pods-AISound.release.xcconfig"; sourceTree = "<group>"; };
 		4DC2E4AF2C9CBC05E893641D /* Pods_AISound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AISound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEF5E26F754D9BF6AB89E5D /* Pods-AISound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AISound.debug.xcconfig"; path = "Target Support Files/Pods-AISound/Pods-AISound.debug.xcconfig"; sourceTree = "<group>"; };
+		D010FFA0271FF271005A7C78 /* CSVWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
 		D01EDB9D26B4C92D00531418 /* AISound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01EDBA026B4C92D00531418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D01EDBA726B4C92D00531418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		D0FEA27526DC5BEC00FE58CC /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				D010FFA0271FF271005A7C78 /* CSVWriter.swift */,
 				D0FEA27626DC5C0700FE58CC /* AudioRecorder.swift */,
 				D0FEA27A26DC5C1200FE58CC /* DataSender.swift */,
 				D0FEA27C26DC5C1E00FE58CC /* MotionRecord.swift */,
@@ -384,6 +387,7 @@
 				D035894F26B6EC00001EDB55 /* MeViewController.swift in Sources */,
 				D0C9B3A826CDFDEB00E89291 /* AIUser.swift.swift in Sources */,
 				D09047AB26CCB169000F215B /* MotionTableViewCell.swift in Sources */,
+				D010FFA1271FF271005A7C78 /* CSVWriter.swift in Sources */,
 				D035894926B6EBA9001EDB55 /* RecordViewController.swift in Sources */,
 				D09047A726CCAD78000F215B /* MotionViewController.swift in Sources */,
 				D035895326BF8C9D001EDB55 /* RegisterViewController.swift in Sources */,
