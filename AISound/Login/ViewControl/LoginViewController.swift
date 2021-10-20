@@ -9,7 +9,7 @@ import KRProgressHUD
 class LoginViewController: UIViewController {
     lazy var contentView: UIView = {
         let content = UIView()
-        content.backgroundColor = UIColor(hexString: "#121212")
+        content.backgroundColor = .white
         content.layer.cornerRadius = 3
         content.layer.masksToBounds = true
         return content
@@ -19,17 +19,17 @@ class LoginViewController: UIViewController {
        let login = UILabel()
        login.text = "LOGIN"
        login.font = UIFont.systemFont(ofSize: 14)
-       login.textColor = .white
+       login.textColor = .black
        return login
     }()
     
     lazy var emailContentView: UIView = {
        let email = UIView()
-       email.backgroundColor = UIColor(hexString: "#121212")
+        email.backgroundColor = .white
        email.layer.cornerRadius = 20
        email.layer.masksToBounds = true
        email.layer.borderWidth = 1
-       email.layer.borderColor = UIColor(hexString: "#313131")?.cgColor
+       email.layer.borderColor = UIColor(hexString: "#E1E1E1")?.cgColor
        return email
     }()
     
@@ -44,11 +44,11 @@ class LoginViewController: UIViewController {
     
     lazy var pwdContentView: UIView = {
        let pwd = UIView()
-       pwd.backgroundColor = UIColor(hexString: "#121212")
+        pwd.backgroundColor = .white
        pwd.layer.cornerRadius = 20
        pwd.layer.masksToBounds = true
        pwd.layer.borderWidth = 1
-       pwd.layer.borderColor = UIColor(hexString: "#313131")?.cgColor
+       pwd.layer.borderColor = UIColor(hexString: "#E1E1E1")?.cgColor
        return pwd
     }()
     
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
         login.setTitle("LOGIN ", for: .normal)
         login.setTitleColor(.white, for: .normal)
         login.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        login.layer.cornerRadius = 3
+        login.layer.cornerRadius = 20
         login.layer.masksToBounds = true
         login.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
         return login
