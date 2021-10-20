@@ -24,8 +24,8 @@ class WelcomeViewController: UIViewController {
         })
         registerBtn = UIButton(type: .custom)
         registerBtn.setTitle("Register/Login", for: .normal)
-        registerBtn.setTitleColor(UIColor(hexString: "#bababa"), for: .normal)
-        registerBtn.backgroundColor = UIColor(hexString: "#383838")
+        registerBtn.setTitleColor(UIColor(hexString: "#505050"), for: .normal)
+        registerBtn.backgroundColor = UIColor(hexString: "#DAD9D9")
         registerBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         registerBtn.layer.cornerRadius = 19
         registerBtn.layer.masksToBounds = true

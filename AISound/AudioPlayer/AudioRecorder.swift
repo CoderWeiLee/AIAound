@@ -144,8 +144,9 @@ class AudioRecorder: NSObject {
     func stopRecord() {
         audioRecorder.stop()
         flagRecord = false
-        
         fetchRecording()
+        writer.close()
+        APP.stopDeviceMotionUpdates()
     }
     
     

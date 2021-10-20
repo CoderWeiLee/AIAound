@@ -134,6 +134,9 @@ class RecordViewController: UIViewController {
         }
         
         noticeLabel.text = "Searching Airpods..."
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3, execute: {
+            self.noticeLabel.text = ""
+        })
     }
 
 
